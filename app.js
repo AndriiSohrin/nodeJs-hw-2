@@ -33,17 +33,14 @@ fun()
         copy(`1800`, `test`);
         return fun()
     })
-
     .then(() => {
         copy(`2000`, `1800`);
         return fun()
     })
-
     .then(() => {
         copy(`test`, `2000`);
         return fun()
     })
-
     .then(() => {
         rmdir(path.join(__dirname, 'test'), (err) => {
             if (err) {
