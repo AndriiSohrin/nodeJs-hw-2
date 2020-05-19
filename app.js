@@ -12,7 +12,8 @@ const copy = (oldPath, newPath) => {
     readdir(path.join(oldPath), (err, files) => {
         if (err) {
             console.log(err)
-        } else {
+            return
+        }
             for (let i = 0; i < files.length; i++) {
                 rename(path.join(__dirname, oldPath, files[i]), path.join(__dirname, newPath, files[i]), (err) => {
                     if (err) {
@@ -20,7 +21,6 @@ const copy = (oldPath, newPath) => {
                     }
                 })
             }
-        }
     })
 };
 
